@@ -9,25 +9,30 @@
 
 body {
     font-family: public sans;
+    margin: 0;
+    padding: 0;
 }
 
 /*HEADER*/
 
 header {
-    background-image: url(images/bg-header-desktop.svg);
-    background-color:hsl(0, 100%, 100%);
+   
+    background-color:white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 10;
 }
 
-nav {
-    display: inline-flex;
+
+
+nav ul{
     list-style: none;
-    color: hsl(233, 8%, 62%);
+    display: flex;
     gap: 2rem;
+    color: hsl(233, 8%, 62%);
 }
 
 button{
@@ -40,6 +45,10 @@ button{
     
 }
 
+button:hover{
+    opacity: 0.7;
+}
+
 /*SECTION 1*/
 
 .section1{
@@ -47,6 +56,7 @@ button{
     justify-content: space-between;
     align-items: center;
     height: 70vh;
+    background-color: hsl(0, 0%, 98%);;
 }
 
 .poster{
@@ -57,6 +67,7 @@ button{
     justify-content: center;
     align-items: center;
     width: 50%;
+    z-index: 3;
 }
 
 .hero{
@@ -181,7 +192,9 @@ footer{
     padding: 3rem 0;
 }
 
-
+/* l-footer{
+    display: flex;
+} */
 
 .socials{
     display: flex;
@@ -189,6 +202,7 @@ footer{
     justify-content: space-evenly;
     gap: 5rem;
 }
+
 .icons{
     display: flex;
     gap: 1rem;
@@ -198,4 +212,15 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.details p:hover{
+    color: hsl(136, 64%, 51%);
+    cursor: pointer;
+
+}
+
+.details{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
