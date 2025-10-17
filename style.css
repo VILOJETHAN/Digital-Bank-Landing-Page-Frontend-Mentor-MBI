@@ -11,6 +11,8 @@ body {
     font-family: public sans;
     margin: 0;
     padding: 0;
+    background-color: hsl(220, 16%, 96%);
+    overflow-x: hidden;
 }
 
 /*HEADER*/
@@ -26,6 +28,21 @@ header {
     z-index: 10;
 }
 
+.section1, .section2, .section3{
+  height: 80vh;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: scrollFade 1s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 30% cover 50%;
+}
+
+@keyframes scrollFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 nav ul{
@@ -67,7 +84,7 @@ button:hover{
     justify-content: center;
     align-items: center;
     width: 50%;
-    z-index: 3;
+    z-index: 5;
 }
 
 .hero{
@@ -95,8 +112,10 @@ p{
 /*SECTION 2*/
 
 .section2{
+    position: relative;
+    z-index: 1;
     height: 70vh;
-    background-color: hsl(220, 16%, 96%);
+    background-color: hsla(220, 14%, 96%, 0);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -192,9 +211,10 @@ footer{
     padding: 3rem 0;
 }
 
-/* l-footer{
+.lowerfooter{
     display: flex;
-} */
+gap: 10rem;
+}
 
 .socials{
     display: flex;
@@ -222,5 +242,19 @@ footer{
 
 .details{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50% 50%;  
+}
+
+.details p{
+    margin-right:10rem;
+}
+
+/* ===========================================================
+MEDIA QUERIES
+=============================================================*/
+
+@media screen and (max-width: 375px) {
+   .poster img{
+    height: 0%;
+   }
 }
